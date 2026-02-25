@@ -257,7 +257,7 @@
       Java: "#b07219",
       Ruby: "#701516",
     };
-    return colors[lang] || "#0066ff";
+    return tints[key] || "#0066ff";
   }
 
 
