@@ -1,37 +1,31 @@
-/* ──────────────────────────────────────────────────────────
-   MANOJPISINI.GITHUB.IO — Neo-Brutalist Design System
-   No rounded corners. No soft gradients. No compromise.
-   ────────────────────────────────────────────────────────── */
-
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap");
-
 :root {
+  /* ── DESIGN TOKENS ──────────────────────────────── */
   --bg: #000000;
   --fg: #ffffff;
-  --accent: #0066ff; /* Neo-Brutalist Blue */
-  --accent-dim: #0044bb;
+  --accent: #0066ff;
   --muted: #888888;
   --danger: #ff3333;
 
+  /* Architectural Borders */
   --border-thin: 2px solid var(--fg);
   --border-thick: 3px solid var(--fg);
   --border-accent: 3px solid var(--accent);
 
+  /* Kinetic Inertia (Shadows) */
   --shadow-hard: 6px 6px 0px var(--fg);
   --shadow-accent: 6px 6px 0px var(--accent);
   --shadow-dark: 6px 6px 0px #000;
 
+  /* Typography Stack */
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
   --nav-height: 64px;
 }
 
-/* ── RESET ─────────────────────────────────────────────── */
+/* ── DOM RESET & BASELINE ─────────────────────────────── */
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -40,7 +34,6 @@
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   cursor: none;
 }
 
@@ -65,7 +58,7 @@ a {
   color: var(--bg);
 }
 
-/* ── CUSTOM CURSOR ─────────────────────────────────────── */
+/* ── INTERACTION LAYER (CURSOR) ─────────────────────── */
 
 .cursor-dot {
   width: 8px;
@@ -77,10 +70,7 @@ a {
   pointer-events: none;
   z-index: 99999;
   transform: translate(-50%, -50%);
-  transition:
-    width 0.15s,
-    height 0.15s,
-    background 0.15s;
+  transition: width 0.15s, height 0.15s, background 0.15s;
 }
 
 .cursor-ring {
@@ -93,11 +83,7 @@ a {
   pointer-events: none;
   z-index: 99998;
   transform: translate(-50%, -50%);
-  transition:
-    width 0.25s ease,
-    height 0.25s ease,
-    border-color 0.25s ease,
-    background 0.25s ease;
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
 .cursor-ring.expanded {
@@ -107,7 +93,7 @@ a {
   background: rgba(0, 102, 255, 0.1);
 }
 
-/* ── NAVIGATION ────────────────────────────────────────── */
+/* ── NAVIGATION ARCHITECTURE ─────────────────────────── */
 
 .nav {
   position: sticky;
@@ -185,12 +171,10 @@ a {
   width: 28px;
   height: 3px;
   background: var(--fg);
-  transition:
-    transform 0.3s,
-    opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
 }
 
-/* ── BRUTAL CARD ───────────────────────────────────────── */
+/* ── COMPONENT: BRUTAL CARD ──────────────────────────── */
 
 .brutal-card {
   background: var(--bg);
@@ -198,9 +182,7 @@ a {
   box-shadow: var(--shadow-hard);
   padding: 2rem;
   position: relative;
-  transition:
-    box-shadow 0.15s,
-    transform 0.15s;
+  transition: box-shadow 0.15s, transform 0.15s;
 }
 
 .brutal-card:hover {
@@ -212,7 +194,7 @@ a {
   border-left: 6px solid var(--accent);
 }
 
-/* ── COMMAND PALETTE ───────────────────────────────────── */
+/* ── COMPONENT: COMMAND DECK ──────────────────────────── */
 
 .cmd-palette {
   position: fixed;
@@ -220,7 +202,7 @@ a {
   z-index: 2000;
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(4px);
-  display: none; /* hidden by default */
+  display: none;
   align-items: flex-start;
   justify-content: center;
   padding-top: 10vh;
@@ -282,7 +264,7 @@ a {
   padding: 2px 4px;
 }
 
-/* ── FLOATING RESUME BUTTON ────────────────────────────── */
+/* ── FLOATING ACTION (RESUME) ────────────────────────── */
 
 .resume-fab {
   position: fixed;
@@ -306,7 +288,7 @@ a {
   box-shadow: 6px 6px 0px var(--fg);
 }
 
-/* ── REPO FILTERS ──────────────────────────────────────── */
+/* ── COMPONENT: REPOSITORY FILTERS ───────────────────── */
 
 .filter-bar {
   display: flex;
@@ -333,7 +315,7 @@ a {
   border-color: var(--accent);
 }
 
-/* ── TIMELINE ──────────────────────────────────────────── */
+/* ── COMPONENT: CHRONICLE (TIMELINE) ─────────────────── */
 
 .timeline {
   position: relative;
@@ -381,7 +363,7 @@ a {
   margin-bottom: 0.5rem;
 }
 
-/* ── SECTION LAYOUT ────────────────────────────────────── */
+/* ── LAYOUT: SPATIAL GRID ────────────────────────────── */
 
 .hero-grid {
   display: grid;
@@ -397,7 +379,7 @@ a {
   margin: 0 auto;
 }
 
-/* ── TACTICAL TERMINAL ─────────────────────────────────── */
+/* ── COMPONENT: TACTICAL TERMINAL ────────────────────── */
 
 .terminal-window {
   background: #0a0a0a;
@@ -486,7 +468,7 @@ a {
   color: var(--muted);
 }
 
-/* ── TEXT-GLITCH EFFECT ────────────────────────────────── */
+/* ── VISUAL EFFECTS: GLITCH & TYPING ─────────────────── */
 
 .text-glitch {
   position: relative;
@@ -498,38 +480,13 @@ a {
 }
 
 @keyframes glitch-skew {
-  0% {
-    transform: skew(0deg);
-  }
-  20% {
-    transform: skew(-2deg);
-    text-shadow:
-      2px 0 var(--accent),
-      -2px 0 var(--danger);
-  }
-  40% {
-    transform: skew(1deg);
-    text-shadow:
-      -2px 0 var(--accent),
-      2px 0 var(--danger);
-  }
-  60% {
-    transform: skew(-1deg);
-    text-shadow:
-      1px 0 var(--accent),
-      -1px 0 var(--danger);
-  }
-  80% {
-    transform: skew(0.5deg);
-    text-shadow: -1px 0 var(--accent);
-  }
-  100% {
-    transform: skew(0deg);
-    text-shadow: none;
-  }
+  0% { transform: skew(0deg); }
+  20% { transform: skew(-2deg); text-shadow: 2px 0 var(--accent), -2px 0 var(--danger); }
+  40% { transform: skew(1deg); text-shadow: -2px 0 var(--accent), 2px 0 var(--danger); }
+  60% { transform: skew(-1deg); text-shadow: 1px 0 var(--accent), -1px 0 var(--danger); }
+  80% { transform: skew(0.5deg); text-shadow: -1px 0 var(--accent); }
+  100% { transform: skew(0deg); text-shadow: none; }
 }
-
-/* ── TYPING CURSOR ─────────────────────────────────────── */
 
 .typing-cursor {
   display: inline-block;
@@ -542,16 +499,11 @@ a {
 }
 
 @keyframes blink-cursor {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-/* ── MARQUEE ───────────────────────────────────────────── */
+/* ── COMPONENT: KINETIC MARQUEE ──────────────────────── */
 
 .marquee-track {
   overflow: hidden;
@@ -575,7 +527,6 @@ a {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--fg);
 }
 
 .marquee-content .sep {
@@ -583,21 +534,19 @@ a {
 }
 
 @keyframes marquee-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-/* ── REPO GRID ─────────────────────────────────────────── */
+/* ── COMPONENT: REPOSITORY GRID ──────────────────────── */
 
 .repo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
+
+/* ── COMPONENT: REPOSITORY CARDS ─────────────────────── */
 
 .repo-card {
   background: var(--bg);
@@ -606,9 +555,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  transition:
-    box-shadow 0.15s,
-    transform 0.15s;
+  transition: box-shadow 0.15s, transform 0.15s;
   position: relative;
 }
 
@@ -658,7 +605,7 @@ a {
   vertical-align: middle;
 }
 
-/* ── LOADING SKELETON ──────────────────────────────────── */
+/* ── COMPONENT: LOADING SKELETON ────────────────────── */
 
 .skeleton-card {
   background: var(--bg);
@@ -673,25 +620,16 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(0, 102, 255, 0.04),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(0, 102, 255, 0.04), transparent);
   animation: skeleton-shimmer 1.5s infinite;
 }
 
 @keyframes skeleton-shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
 }
 
-/* ── TERMINAL ERROR ────────────────────────────────────── */
+/* ── COMPONENT: OPERATIONAL ERROR ───────────────────── */
 
 .terminal-error {
   font-family: var(--font-mono);
@@ -711,7 +649,7 @@ a {
   color: var(--muted);
 }
 
-/* ── PAGE TRANSITION ───────────────────────────────────── */
+/* ── COMPONENT: PAGE ENTRANCE ────────────────────────── */
 
 .page-wrap {
   opacity: 0;
@@ -719,12 +657,10 @@ a {
 }
 
 @keyframes fade-in {
-  to {
-    opacity: 1;
-  }
+  to { opacity: 1; }
 }
 
-/* ── FOOTER ────────────────────────────────────────────── */
+/* ── SYSTEM FOOTER ───────────────────────────────────── */
 
 .footer {
   border-top: var(--border-thick);
@@ -741,29 +677,16 @@ a {
   color: var(--accent);
 }
 
-/* ── RESPONSIVE ────────────────────────────────────────── */
+/* ── RESPONSIVE ADAPTATION ────────────────────────────── */
 
 @media (max-width: 1024px) {
-  .repo-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .repo-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .nav {
-    flex-wrap: wrap;
-    height: auto;
-    padding: 1rem 1.5rem;
-  }
-
-  .nav-toggle {
-    display: flex;
-  }
+  .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .nav { flex-wrap: wrap; height: auto; padding: 1rem 1.5rem; }
+  .nav-toggle { display: flex; }
 
   .nav-links {
     display: none;
@@ -775,27 +698,11 @@ a {
     padding-top: 1rem;
   }
 
-  .nav-links.open {
-    display: flex;
-  }
-
-  .nav-links a {
-    padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  }
-
-  .section {
-    padding: 4rem 1.5rem;
-  }
-
-  .repo-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cursor-dot,
-  .cursor-ring {
-    display: none;
-  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 0.75rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+  .section { padding: 4rem 1.5rem; }
+  .repo-grid { grid-template-columns: 1fr; }
+  .cursor-dot, .cursor-ring { display: none; }
 }
 
 /* ── PRINT OPTIMIZATION (Resume Flex) ──────────────────── */
