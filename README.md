@@ -7,12 +7,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-white?style=for-the-badge)](LICENSE)
 [![Status: Operational](https://img.shields.io/badge/Status-Operational-00FF00?style=for-the-badge)](https://manojpisini.github.io)
 
-```text
-  __  __   _   _  _  ___      _ 
- |  \/  | /_\ | \| |/ _ \  _ | |
- | |\/| |/ _ \| .` | (_) || || |
- |_|  |_/_/ \_\_|\_|\___/  \__/ 
-```
 </div>
 
 ## ⚙️ The Engine
