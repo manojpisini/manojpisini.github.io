@@ -1,7 +1,7 @@
 <div align="center">
 
 # Manoj Pisini: Multi-Domain Portfolio
-### _High-Performance Logic x Neo-Brutalist Design_
+### _Neo-Brutalist Design_
 
 [![Architecture: Headless](https://img.shields.io/badge/Architecture-Headless-0066FF?style=for-the-badge)](https://github.com/manojpisini/manojpisini.github.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-white?style=for-the-badge)](LICENSE)
