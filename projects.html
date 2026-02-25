@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Manoj Pisini</title>
+  <meta name="description" content="Live terminal view of Manoj Pisini's public GitHub repositories — fetched in real-time via the GitHub REST API.">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- FLOATING RESUME -->
+  <a href="files/Manoj_Pisini_FullStack_Engineer_2025.pdf" 
+     download="Manoj_Pisini_Resume_2025.pdf"
+     class="resume-fab">
+    Resume
+  </a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">MP://</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html" class="text-glitch">Home</a></li>
+      <li><a href="about.html" class="text-glitch">About</a></li>
+      <li><a href="projects.html" class="text-glitch active">Projects</a></li>
+      <li><a href="blog.html" class="text-glitch">Blog</a></li>
+      <li><a href="contact.html" class="text-glitch">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrap">
+
+    <!-- ── HEADER ───────────────────────────────────────── -->
+    <section class="section">
+      <div class="section-label">LIVE_REPOS</div>
+
+      <!-- ── API NOTE ─────────────────────────────────────── -->
+      <section class="section api-note" style="padding-top: 0;">
+        <div class="brutal-card" style="border-style: dashed; opacity: 0.8;">
+          <code style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted);">
+            <span style="color: var(--accent);">$</span> curl https://manojpisini.github.io/api/projects.json
+          </code>
+          <p class="mt-2 text-xs" style="color: var(--muted);">
+            Static JSON endpoints available for programmatic consumption.
+            Architecture: Headless REST via GitHub Pages.
+          </p>
+        </div>
+      </section>
+
+      <h1 class="text-4xl md:text-6xl font-bold mb-8" style="font-family: var(--font-display);">
+        GitHub Repositories
+      </h1>
+
+      <p class="max-w-2xl mb-12" style="color: var(--muted); line-height: 1.8;">
+        Fetching live data from <span style="color: var(--accent);">api.github.com</span>.
+        Grid updates dynamically based on active development spikes.
+      </p>
+
+      <!-- Filter Bar -->
+      <div id="filter-bar" class="filter-bar">
+        <!-- populated by script.js -->
+      </div>
+
+
+      <!-- Repo Grid -->
+      <div id="repo-grid" class="repo-grid">
+        <!-- populated by script.js -->
+      </div>
+    </section>
+
+    <!-- ── SIGNAL BAR ───────────────────────────────────── -->
+    <div class="flex flex-wrap gap-8 justify-center py-8" style="border-top: var(--border-thick); border-bottom: var(--border-thick); font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted);">
+      <span>SYSTEMS <span style="color: var(--accent)">●</span> ONLINE</span>
+      <span>LATENCY <span id="telemetry-latency" style="color: var(--accent)">...</span></span>
+      <span>UPTIME <span id="telemetry-uptime" style="color: var(--accent)">99.99%</span></span>
+      <span>STATUS <span style="color: var(--accent)">OPERATIONAL</span></span>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <span>©</span> 2026 Manoj Pisini — Built with raw HTML, CSS & JS.
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

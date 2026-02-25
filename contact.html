@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Manoj Pisini</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- CURSOR -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- FLOATING RESUME -->
+    <a href="files/Manoj_Pisini_FullStack_Engineer_2025.pdf" 
+       download="Manoj_Pisini_Resume_2025.pdf"
+       class="resume-fab">
+      Resume
+    </a>
+
+    <!-- NAV -->
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">MP://</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="text-glitch">Home</a></li>
+        <li><a href="about.html" class="text-glitch">About</a></li>
+        <li><a href="projects.html" class="text-glitch">Projects</a></li>
+        <li><a href="blog.html" class="text-glitch">Blog</a></li>
+        <li><a href="contact.html" class="text-glitch active">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="page-wrap">
+      <!-- ── CONTACT ─────────────────────────────────────── -->
+      <section class="section min-h-[calc(100vh-64px)] flex flex-col justify-center">
+        <div class="section-label">ESTABLISH_CONNECTION</div>
+        
+        <h1 class="text-4xl md:text-6xl lg:text-8xl font-bold mb-12" style="font-family: var(--font-display);">
+          Let's Build <br><span class="text-accent">Something Real.</span>
+        </h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl">
+          <!-- Contact Detail -->
+          <div>
+            <p class="text-xl mb-8" style="color: var(--muted); line-height: 1.6;">
+              Open for high-impact development, computer science, engineering roles and strategic collaboration.
+            </p>
+            
+            <div class="space-y-6">
+              <div class="brutal-card">
+                <div class="text-[10px] uppercase font-bold text-accent mb-1">EMAIL_LINK</div>
+                <a href="mailto:manojpisini.dev@gmail.com" class="text-xl md:text-2xl font-bold hover:underline">
+                  manojpisini.dev@gmail.com
+                </a>
+              </div>
+              <div class="brutal-card">
+                <div class="text-[10px] uppercase font-bold text-accent mb-1">NETWORK_ACCESS</div>
+                <div class="flex gap-6 font-bold">
+                  <a href="https://github.com/manojpisini" target="_blank" class="hover:text-accent">GitHub</a>
+                  <a href="https://linkedin.com/in/manojpisini" target="_blank" class="hover:text-accent">LinkedIn</a>
+                  <a href="https://dev.to/manojpisini" target="_blank" class="hover:text-accent">Dev.to</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mock Form -->
+          <div class="brutal-card brutal-card--accent p-8">
+            <div class="section-label" style="margin-bottom: 2rem;">SEND_PACKET</div>
+            <form action="#" class="space-y-6">
+              <div>
+                <label class="block text-[10px] font-bold mb-2 uppercase tracking-widest">EMAIL (RETURN PATH)</label>
+                <input type="email" placeholder="Your direct return path..." class="w-full bg-zinc-900 border border-zinc-700 p-4 font-mono text-sm outline-none focus:border-accent">
+              </div>
+              <div>
+                <label class="block text-[10px] font-bold mb-2 uppercase tracking-widest">CONTENT (PAYLOAD)</label>
+                <textarea rows="4" placeholder="Inject your message payload..." class="w-full bg-zinc-900 border border-zinc-700 p-4 font-mono text-sm outline-none focus:border-accent"></textarea>
+              </div>
+              <button type="submit" class="w-full bg-accent text-bg font-bold py-4 uppercase tracking-widest hover:scale-[1.02] transition-transform">
+                EXECUTE_SEND
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SIGNAL BAR ───────────────────────────────────── -->
+      <div class="flex flex-wrap gap-8 justify-center py-8" style="border-top: var(--border-thick); border-bottom: var(--border-thick); font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted);">
+        <span>SYSTEMS <span style="color: var(--accent)">●</span> ONLINE</span>
+        <span>LATENCY <span id="telemetry-latency" style="color: var(--accent)">...</span></span>
+        <span>UPTIME <span id="telemetry-uptime" style="color: var(--accent)">99.99%</span></span>
+        <span>STATUS <span style="color: var(--accent)">OPERATIONAL</span></span>
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <span>©</span> 2026 Manoj Pisini — Built with raw HTML, CSS & JS.
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

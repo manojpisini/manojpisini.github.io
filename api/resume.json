@@ -1,0 +1,137 @@
+{
+  "basics": {
+    "name": "Manoj Pisini",
+    "label": "Multi-Domain Engineer",
+    "email": "manoj.pisini@example.com",
+    "phone": "+91 0000000000",
+    "url": "https://manojpisini.github.io",
+    "summary": "Full-stack engineer and systems architect bridging the gap between high-level branding and low-level logic. 3+ years of experience in building secure, scalable applications and leading multidisciplinary engineering teams.",
+    "location": {
+      "city": "Raipur",
+      "countryCode": "IN",
+      "region": "Chhattisgarh"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "manojpisini",
+        "url": "https://github.com/manojpisini"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "manojpisini",
+        "url": "https://linkedin.com/in/manojpisini"
+      },
+      {
+        "network": "Dev.to",
+        "username": "manojpisini",
+        "url": "https://dev.to/manojpisini"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Katalyst Business Partners Pvt. Ltd",
+      "position": "Software & Systems Developer",
+      "url": "https://katalystpartners.com",
+      "startDate": "2022-08-01",
+      "endDate": null,
+      "summary": "Developing core security and monitoring infrastructure for enterprise-scale business logic.",
+      "highlights": [
+        "Optimized system reliability by 30% through advanced performance profiling and automated testing suites.",
+        "Architected secure internal communication protocols using modern cryptographic standards.",
+        "Streamlined CI/CD pipelines reducing deployment latency by 45%.",
+        "Implemented real-time telemetry and monitoring dashboards for critical system health."
+      ]
+    },
+    {
+      "name": "NIT Raipur Robotics Club",
+      "position": "Engineering Leadership & Systems Core",
+      "url": "https://nitrr.ac.in",
+      "startDate": "2021-05-01",
+      "endDate": "2022-08-01",
+      "summary": "Led a team of 80+ student engineers in developing precise robotics systems and autonomous logic.",
+      "highlights": [
+        "Orchestrated the development of high-precision positioning systems for autonomous rovers.",
+        "Led workshops on embedded systems, Linux architecture, and machine learning integration.",
+        "Designed and implemented sensor fusion algorithms for meteorological simulation platforms.",
+        "Managed resource allocation and sprint planning for multiple concurrent project tracks."
+      ]
+    },
+    {
+      "name": "State Co-operative Dairy Federation",
+      "position": "Analytics Intern",
+      "startDate": "2019-01-01",
+      "endDate": "2019-08-01",
+      "summary": "Applied analytical modeling to optimize manufacturing and supply chain operations.",
+      "highlights": [
+        "Analyzed operational data to identify bottlenecks in the production cycle.",
+        "Proposed process refinements resulting in a 15% increase in operational efficiency.",
+        "Built custom visualization tools for monitoring dairy cold-chain metrics."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "National Institute of Technology, Raipur",
+      "area": "Biotechnology Engineering",
+      "studyType": "Bachelor of Technology",
+      "startDate": "2018-07-01",
+      "endDate": "2022-06-01"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Systems Programming",
+      "level": "Advanced",
+      "keywords": ["Rust", "Go", "C++", "C", "Shell Scripting"]
+    },
+    {
+      "name": "Frontend Architecture",
+      "level": "Advanced",
+      "keywords": [
+        "TypeScript",
+        "JavaScript",
+        "React",
+        "Tailwind CSS",
+        "Neo-Brutalist Design"
+      ]
+    },
+    {
+      "name": "Backend & Cloud",
+      "level": "Intermediate",
+      "keywords": [
+        "Node.js",
+        "Python",
+        "PostgreSQL",
+        "Docker",
+        "CI/CD Pipelines"
+      ]
+    },
+    {
+      "name": "Robotics & Embedded",
+      "level": "Intermediate",
+      "keywords": ["ROS", "Embedded C", "Sensor Fusion", "Positioning Systems"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native/Professional"
+    },
+    {
+      "language": "Hindi",
+      "fluency": "Native"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Economics & Macro-Finance",
+      "keywords": ["Market Cycles", "Behavioral Economics"]
+    },
+    {
+      "name": "Branding & Visual Design",
+      "keywords": ["Minimalism", "Vibrancy", "Brutalist Aesthetics"]
+    }
+  ]
+}

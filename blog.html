@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Manoj Pisini</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- CURSOR -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- FLOATING RESUME -->
+    <a href="files/Manoj_Pisini_FullStack_Engineer_2025.pdf" 
+       download="Manoj_Pisini_Resume_2025.pdf"
+       class="resume-fab">
+      Resume
+    </a>
+
+    <!-- NAV -->
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">MP://</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="text-glitch">Home</a></li>
+        <li><a href="about.html" class="text-glitch">About</a></li>
+        <li><a href="projects.html" class="text-glitch">Projects</a></li>
+        <li><a href="blog.html" class="text-glitch active">Blog</a></li>
+        <li><a href="contact.html" class="text-glitch">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="page-wrap">
+      <!-- ── BLOG HEAD ────────────────────────────────────── -->
+      <section class="section">
+        <div class="section-label">SIGINT: BROADCASTS</div>
+        <h1
+          class="text-4xl md:text-6xl font-bold mb-8"
+          style="font-family: var(--font-display)"
+        >
+          Engineering Updates &amp; Deep Dives
+        </h1>
+        <p class="max-w-2xl text-xl mb-12" style="color: var(--muted)">
+          Thoughts on systems architecture, robotics, and the multidisciplinary
+          approach to modern engineering. Fetched live from Dev.to.
+        </p>
+
+        <div id="dedicated-blog-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Populated by script.js -->
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+        </div>
+      </section>
+
+      <!-- ── SIGNAL BAR ───────────────────────────────────── -->
+      <div class="flex flex-wrap gap-8 justify-center py-8" style="border-top: var(--border-thick); border-bottom: var(--border-thick); font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted);">
+        <span>SYSTEMS <span style="color: var(--accent)">●</span> ONLINE</span>
+        <span>LATENCY <span id="telemetry-latency" style="color: var(--accent)">...</span></span>
+        <span>UPTIME <span id="telemetry-uptime" style="color: var(--accent)">99.99%</span></span>
+        <span>STATUS <span style="color: var(--accent)">OPERATIONAL</span></span>
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <span>©</span> 2026 Manoj Pisini — Built with raw HTML, CSS & JS.
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

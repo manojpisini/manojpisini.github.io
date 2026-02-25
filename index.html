@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manoj Pisini — Multi-Domain Engineer</title>
+    <meta
+      name="description"
+      content="Manoj Pisini — Multi-Domain Engineer building systems at the intersection of logic, design, and market intelligence."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- INTERACTIVE SURFACE: Custom pointer tracking for tactical feedback -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- PERSISTENT ACCESS: High-priority document retrieval -->
+    <a href="files/Manoj_Pisini_FullStack_Engineer_2025.pdf" 
+       download="Manoj_Pisini_Resume_2025.pdf"
+       class="resume-fab">
+      Resume
+    </a>
+
+    <!-- GLOBAL NAVIGATION: Decoupled routing structure -->
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">MP://</a>
+      <button
+        class="nav-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="text-glitch active">Home</a></li>
+        <li><a href="about.html" class="text-glitch">About</a></li>
+        <li><a href="projects.html" class="text-glitch">Projects</a></li>
+        <li><a href="blog.html" class="text-glitch">Blog</a></li>
+        <li><a href="contact.html" class="text-glitch">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="page-wrap">
+      <!-- HERO SECTOR: Primary brand identity and mission statement -->
+      <section class="min-h-[calc(100vh-64px)] flex items-center section">
+        <div class="hero-grid">
+          <!-- LEFT: Identity -->
+          <div class="hero-identity">
+            <div class="section-label">SYSTEM_LIFECYCLE: ACTIVE</div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold leading-none tracking-tight mb-6" style="font-family: var(--font-display);">
+              <span>Manoj Pisini</span>
+            </h1>
+
+            <p class="text-xl md:text-2xl lg:text-3xl font-medium mb-10" style="font-family: var(--font-mono); color: var(--accent);">
+              Multi-Domain Engineer
+            </p>
+
+            <div class="mb-8" style="font-family: var(--font-mono); font-size: 1.1rem; color: var(--muted);">
+              <span id="typing-text"></span><span class="typing-cursor"></span>
+            </div>
+          </div>
+
+          <!-- RIGHT: Tactical Terminal -->
+          <div class="hero-terminal hidden md:block">
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <div class="terminal-title">TERMINAL_STREAM: LIVE_CODE</div>
+                <div class="terminal-controls">
+                  <div class="control-dot"></div>
+                  <div class="control-dot"></div>
+                  <div class="control-dot"></div>
+                </div>
+              </div>
+              <div id="code-showcase" class="code-container">
+                <!-- populated by script.js -->
+              </div>
+              <div class="terminal-label" id="terminal-lang">LOGIC_CORE</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- OPERATIONAL TELEMETRY: Real-time system health and network latency monitoring -->
+      <div
+        class="flex flex-wrap gap-8 justify-center py-8"
+        style="
+          border-top: var(--border-thick);
+          border-bottom: var(--border-thick);
+          font-family: var(--font-mono);
+          font-size: 0.8rem;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          color: var(--muted);
+        "
+      >
+        <span>SYSTEMS <span style="color: var(--accent)">●</span> ONLINE</span>
+        <span>LATENCY <span id="telemetry-latency" style="color: var(--accent)">...</span></span>
+        <span>UPTIME <span id="telemetry-uptime" style="color: var(--accent)">99.99%</span></span>
+        <span>STATUS <span style="color: var(--accent)">OPERATIONAL</span></span>
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <span>©</span> 2026 Manoj Pisini — Built with raw HTML, CSS & JS.
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

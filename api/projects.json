@@ -1,0 +1,51 @@
+[
+  {
+    "name": "manojpisini.github.io",
+    "description": "High-performance Neo-Brutalist portfolio architecture. Multi-page, SEO-optimized, and API-driven.",
+    "status": "Production",
+    "tech": ["HTML5", "Vanilla JS", "Tailwind CSS", "GitHub API"],
+    "links": {
+      "github": "https://github.com/manojpisini/manojpisini.github.io",
+      "live": "https://manojpisini.github.io"
+    },
+    "metrics": {
+      "latency": "sub-50ms",
+      "accessibility": "100%",
+      "performance": "100%"
+    },
+    "highlights": [
+      "Custom cursor logic with mechanical lag",
+      "Command Palette (Ctrl+K) for headless navigation",
+      "Print-optimized resume generation via @media print",
+      "Live Dev.to integration for blog broadcast"
+    ]
+  },
+  {
+    "name": "Content-Core UI",
+    "description": "A purpose-built dashboard for managing multi-channel content, scheduling, and analytics.",
+    "status": "In Development",
+    "tech": ["TypeScript", "React", "PostgreSQL", "Node.js"],
+    "links": {
+      "github": "https://github.com/manojpisini/content-core"
+    },
+    "highlights": [
+      "Unified authoring for blogs and social media",
+      "Real-time analytics integration",
+      "Custom dashboard components"
+    ]
+  },
+  {
+    "name": "Positioning Systems (Robotics)",
+    "description": "High-precision sensor fusion and positioning logic for autonomous mobile robots.",
+    "status": "Archived",
+    "tech": ["C++", "ROS", "Python", "Linux"],
+    "links": {
+      "docs": "https://github.com/manojpisini/robotics-docs"
+    },
+    "highlights": [
+      "Implemented EKF-based sensor fusion for GPS/IMU data",
+      "Optimized path-planning algorithms for obstacle avoidance",
+      "Developed custom Linux kernel modules for hardware interfacing"
+    ]
+  }
+]
