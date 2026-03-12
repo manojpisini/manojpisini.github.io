@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Software Engineer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="site-wrapper">
+        <header class="system-header">
+            <div class="header-block">
+                <a href="index.html" style="text-decoration: none; color: inherit; font-family: var(--font-mono); font-weight: 700;">MP//2026</a>
+            </div>
+            <div class="header-block"></div>
+            <div class="header-block">
+                <button id="theme-toggle" class="theme-toggle-btn">TOGGLE THEME</button>
+            </div>
+        </header>
+
+        <main class="system-main">
+            <section class="hero-section">
+                <h1>Blog</h1>
+                <p>Engineering deep-dives and technical articles mirrored from Dev.to.</p>
+            </section>
+
+            <section class="content-block">
+                <div id="blog-container">
+                    <p class="mono-status">SYNCING_ARTICLES...</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="system-footer">
+            <!-- Dynamic Footer Injection -->
+        </footer>
+    </div>
+    <script type="module" src="core.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

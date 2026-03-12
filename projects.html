@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Software Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Monaco Editor Loader -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js"></script>
+</head>
+<body>
+    <div class="site-wrapper">
+        <header class="system-header">
+            <div class="header-block">
+                <a href="index.html" style="text-decoration: none; color: inherit; font-family: var(--font-mono); font-weight: 700;">MP//2026</a>
+            </div>
+            <div class="header-block"></div>
+            <div class="header-block">
+                <button id="theme-toggle" class="theme-toggle-btn">TOGGLE THEME</button>
+            </div>
+        </header>
+
+        <main class="system-main">
+            <section class="hero-section">
+                <h1>Projects</h1>
+                <p>Public repositories and technical prototypes fetched directly from GitHub.</p>
+            </section>
+
+            <section class="content-block">
+                <div id="repo-container" class="standard-grid">
+                    <p class="mono-status">INITIALIZING_NODE_SYNC...</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="system-footer">
+            <!-- Dynamic Footer Injection -->
+        </footer>
+
+        <!-- Repo Explorer Modal (VS Code Style) -->
+        <div id="repo-explorer" class="explorer-modal">
+            <div class="explorer-content">
+                <header class="explorer-header">
+                    <span id="explorer-title">MANOJ@PORTFOLIO:~/REPOSITORY</span>
+                    <div class="explorer-controls">
+                        <a id="explorer-repo-link" href="#" target="_blank" class="bold-link">[GITHUB]</a>
+                        <button class="close-explorer" onclick="closeExplorer()">[CLOSE]</button>
+                    </div>
+                </header>
+                
+                <div class="explorer-main-area">
+                    <aside class="activity-bar">
+                        <div id="activity-files" class="activity-icon active" onclick="switchActivity('files')">FILES</div>
+                        <div id="activity-git" class="activity-icon" onclick="switchActivity('git')">GIT</div>
+                        <div id="activity-debug" class="activity-icon" onclick="switchActivity('debug')">DEBUG</div>
+                    </aside>
+
+                    <aside class="explorer-sidebar">
+                        <div class="sidebar-label">EXPLORER</div>
+                        <div class="explorer-breadcrumbs" id="explorer-breadcrumbs"></div>
+                        <div id="explorer-sidebar" class="sidebar-tree"></div>
+                    </aside>
+
+                    <main class="editor-area">
+                        <nav class="editor-tabs" id="editor-tabs"></nav>
+                        <div class="editor-view" id="explorer-view">
+                            <div id="monaco-container" style="width: 100%; height: 100%;"></div>
+                            <div id="explorer-placeholder" class="explorer-placeholder">SELECT_FILE_TO_VIEW</div>
+                        </div>
+                    </main>
+                </div>
+
+                <footer class="explorer-status-bar">
+                    <div id="status-left">LF // UTF-8</div>
+                    <div id="status-right">REPO: <span id="status-repo-name">NONE</span></div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="core.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
