@@ -60,7 +60,7 @@ export const DiscoveryModule = {
         const gridEl = document.getElementById('blog-grid');
 
         try {
-            const manifestResponse = await fetch('blog/manifest.json');
+            const manifestResponse = await fetch(`blog/manifest.json?v=${Date.now()}`);
             const manifestPosts = manifestResponse.ok ? await manifestResponse.json() : [];
             
             gridEl.innerHTML = manifestPosts.reverse().map(post => `
