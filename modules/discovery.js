@@ -82,7 +82,8 @@ export const DiscoveryModule = {
 
     async fetchDevTo(gridEl) {
         try {
-            const response = await fetch('https://dev.to/api/articles?username=manojpisini&per_page=4');
+            // Include cache-buster to forcefully pull fresh Dev.to content bypassing CDNs
+            const response = await fetch(`https://dev.to/api/articles?username=manojpisini&per_page=4&v=${Date.now()}`);
             if (response.ok) {
                 const articles = await response.json();
                 gridEl.innerHTML += articles.map(post => `
