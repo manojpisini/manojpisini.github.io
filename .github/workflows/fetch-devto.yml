@@ -1,0 +1,24 @@
+name: Fetch Dev.to Blogs
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Run every hour
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  fetch_devto:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch Dev.to Articles
+        run: |
+          curl -s https://dev.to/api/articles?username=manojpisini > blog/devto-cache.json
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: Sync dev.to blogs backup"
+          file_pattern: 'blog/devto-cache.json'
+          branch: main
