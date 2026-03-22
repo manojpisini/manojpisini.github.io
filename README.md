@@ -1,93 +1,196 @@
-# MP:// TECHNICAL_SPECIFICATION
-### Software Engineer Portfolio // Manoj Pisini
+<div align="center">
 
-[![Status](https://img.shields.io/badge/STATUS-OPERATIONAL-success?style=flat-square&logo=ghostery)](https://manojpisini.com)
-[![Engine](https://img.shields.io/badge/ENGINE-VANILLA_JS-yellow?style=flat-square&logo=javascript)](https://manojpisini.com)
-[![UI/UX](https://img.shields.io/badge/DESIGN-AMOLED_DARK-black?style=flat-square)](https://manojpisini.com)
-[![Protocol](https://img.shields.io/badge/PROTOCOL-BLUEPRINT_v1.0-white?style=flat-square)](https://manojpisini.com)
+<br/>
 
-**A modular staticportfolio focused on architectural efficiency.**
+```
+███╗   ███╗██████╗        ██╗
+████╗ ████║██╔══██╗      ██╔╝
+██╔████╔██║██████╔╝     ██╔╝
+██║╚██╔╝██║██╔═══╝     ██╔╝
+██║ ╚═╝ ██║██║        ██╔╝
+╚═╝     ╚═╝╚═╝       ╚═╝
+```
+
+### `MANOJ PISINI` &nbsp;·&nbsp; Software Engineer Portfolio
+
+<br/>
+
+[![Status](https://img.shields.io/badge/STATUS-OPERATIONAL-success?style=flat-square&logo=ghostery&logoColor=white)](https://manojpisini.com)
+[![Engine](https://img.shields.io/badge/ENGINE-VANILLA_JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://manojpisini.com)
+[![UI/UX](https://img.shields.io/badge/DESIGN-AMOLED_DARK-000000?style=flat-square&logo=datadog&logoColor=white)](https://manojpisini.com)
+[![Protocol](https://img.shields.io/badge/PROTOCOL-BLUEPRINT_v1.0-ffffff?style=flat-square&logo=blueprint&logoColor=black)](https://manojpisini.com)
+[![Deploy](https://img.shields.io/badge/HOSTED-GITHUB_PAGES-181717?style=flat-square&logo=github&logoColor=white)](https://manojpisini.github.io)
+
+<br/>
+
+> **A modular static portfolio focused on architectural efficiency.**  
+> Zero dependencies · AMOLED-optimized · Offline-resilient · Privacy-first
+
+<br/>
 
 </div>
 
 ---
 
-## 🛠 Infrastructure Overview
+<br/>
 
-This project is a **Single Page Application (SPA)** framework implemented with **Vanilla Javascript** and **CSS Variables**. It utilizes modular architectural patterns, resilient data fetching, and an AMOLED-optimized monochrome UI.
+## ◈ &nbsp; Infrastructure Overview
+
+This project is a **Single Page Application (SPA)** built entirely with **Vanilla JavaScript** and **CSS Variables** — no frameworks, no bundlers, no overhead. It employs modular architectural patterns, resilient multi-tier data fetching, and a monochrome AMOLED-optimized UI.
+
+<br/>
 
 ---
 
-## 🛰 Architecture & Data Fetching
+<br/>
 
-The system utilizes a **Modular Sync System**. UI components are dynamically rendered based on external API responses and validated local caches.
+## ◈ &nbsp; Architecture & Data Fetching
 
-### 🌑 Caching & Request Throttling
+The system operates on a **Modular Sync System** — UI components are dynamically rendered from external API responses, validated against local caches, and served via static fallbacks when connectivity is unavailable.
+
+<br/>
+
+### 🌑 &nbsp; Caching & Request Throttling
 
 To stay within GitHub API rate limits, the system implements a **6-hour persistence layer**.
 
-- **Cycle**: Throttled to 4 repository syncs per 24-hour period.
-- **Persistence**: Data is cached in `localStorage` with a TTL validation check.
-- **Synchronization**: Fresh fetches overwrite the existing cache to prevent data bloat.
+| Parameter | Value | Notes |
+| :-------- | :---- | :---- |
+| **Sync Cycle** | 4× per 24h | Throttled to avoid rate limits |
+| **Persistence** | `localStorage` with TTL | Validated on each boot |
+| **Synchronization** | Overwrite on fresh fetch | Prevents data bloat |
 
-### 🖥 Integrated Code Browser (Monaco)
+<br/>
 
-The Projects section includes a functional code viewer:
+### 🖥 &nbsp; Integrated Code Browser &nbsp;`[Monaco]`
 
-- **Library**: Integrated **Monaco Editor** for source code visualization.
-- **Resilience**: Implements `REPO_STRUCTURE_FALLBACKS` for offline availability of core metadata.
-- **Status Mapping**: Assets are flagged as `LATEST` (API-live), `LOCAL_CACHE_SYNC` (cached), or `VERIFIED_CACHE` (factory fallback).
+The Projects section includes a fully functional in-browser source viewer.
 
-### 🖋 Markdown-Native Blog
+- **Library** — Monaco Editor for syntax-aware code visualization
+- **Resilience** — `REPO_STRUCTURE_FALLBACKS` ensure offline availability of core metadata
+- **Status Flags** — Assets annotated as one of:
 
-A blog rendering system that integrates local manifest data with remote articles.
-- **Source**: Aggregates technical documentation from **Dev.to API**.
-- **Rendering**: Implements a Markdown parser with support for **Mermaid.js** visualizations, syntax highlighting, and GFM alerts.
+  | Flag | Meaning |
+  | :--- | :------ |
+  | `LATEST` | Live from GitHub API |
+  | `LOCAL_CACHE_SYNC` | Served from browser cache |
+  | `VERIFIED_CACHE` | Factory fallback (static) |
+
+<br/>
+
+### 🖋 &nbsp; Markdown-Native Blog
+
+A blog rendering system aggregating local manifest data with remote articles.
+
+- **Source** — Dev.to API for technical articles
+- **Rendering** — Custom Markdown parser with full support for:
+  - **Mermaid.js** architectural diagrams
+  - Syntax-highlighted code blocks
+  - GitHub Flavored Markdown (GFM) alerts
+
+<br/>
 
 ---
 
-## ⚡ Technical Stack
+<br/>
+
+## ◈ &nbsp; Technical Stack
 
 <div align="center">
 
-| Component | Technology | Rationale |
-| :--- | :--- | :--- |
-| **Logic** | Vanilla ES6+ | Zero-dependency, low-overhead execution. |
-| **Styling** | Native CSS | Performance-tuned monochrome theme. |
-| **Editor** | Monaco Editor | Native code browsing capabilities. |
-| **Diagrams** | Mermaid.js | Architectural visualization. |
-| **Persistence** | LocalStorage | Browser-native state management. |
+<br/>
+
+| Layer | Technology | Rationale |
+| :---: | :--------: | :-------- |
+| ⚙️ &nbsp; **Logic** | Vanilla ES6+ | Zero-dependency, low-overhead execution |
+| 🎨 &nbsp; **Styling** | Native CSS + Variables | Performance-tuned monochrome theming |
+| 📝 &nbsp; **Editor** | Monaco Editor | Native in-browser code browsing |
+| 📊 &nbsp; **Diagrams** | Mermaid.js | Architectural visualization |
+| 💾 &nbsp; **Persistence** | LocalStorage | Browser-native state management |
+| 🚀 &nbsp; **Deployment** | GitHub Pages + Actions | Static-first, zero-config CI/CD |
+
+<br/>
 
 </div>
 
 ---
 
-## 🚀 Environment & Deployment
+<br/>
+
+## ◈ &nbsp; Environment & Deployment
 
 <details>
-<summary><b>View environment specifications</b></summary>
+<summary><b>&nbsp;▶ &nbsp; View environment specifications</b></summary>
+
+<br/>
 
 ### Local Preview
-The architecture is zero-dependency. No build step or package manager is required.
-1. Clone the repository: `git clone https://github.com/manojpisini/manojpisini.github.io.git`
-2. Launch via any static server (e.g., Python, Live Server, or `npx serve` if preferred).
-3. The entry point is `index.html`.
+
+The architecture is **zero-dependency** — no build step or package manager required.
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/manojpisini/manojpisini.github.io.git
+
+# 2. Launch via any static server
+python -m http.server 8080
+# OR: npx serve .
+# OR: VS Code Live Server extension
+
+# 3. Entry point
+open index.html
+```
+
+<br/>
 
 ### Hosting
-The system is optimized for **GitHub Pages**. It utilizes a stateless, static-first architecture requiring zero server-side configuration. Managed CI/CD is handled via GitHub Actions for automated deployment.
+
+Optimized for **GitHub Pages** — stateless, static-first, zero server configuration.
+
+```
+CI/CD Pipeline:  git push → GitHub Actions → Pages Deploy
+Latency:         ~30s from push to live
+Rollback:        Native via GitHub commit history
+```
 
 </details>
 
----
-
-## 🔒 Operational Safeguards
-
-- **Performance**: Cursor animations run on a dedicated `requestAnimationFrame` loop.
-- **Privacy**: No tracking scripts or analytical beacons; zero external telemetry.
-- **Availability**: Automatic fallback to static cache indices on upstream connectivity failure.
+<br/>
 
 ---
+
+<br/>
+
+## ◈ &nbsp; Operational Safeguards
 
 <div align="center">
-<b>© 2026 Manoj Pisini</b>
+
+<br/>
+
+| Module | Safeguard | Implementation |
+| :----- | :-------- | :------------- |
+| 🖱️ &nbsp; **Performance** | Dedicated animation loop | `requestAnimationFrame` for cursor effects |
+| 🔒 &nbsp; **Privacy** | Zero telemetry | No trackers, no analytics beacons |
+| 📡 &nbsp; **Availability** | Graceful degradation | Auto-fallback to static cache on failure |
+
+<br/>
+
+</div>
+
+---
+
+<br/>
+
+<div align="center">
+
+```
+┌─────────────────────────────────────────────┐
+│  SYSTEM STATUS: NOMINAL  ·  ALL MODULES: OK  │
+└─────────────────────────────────────────────┘
+```
+
+**© 2026 Manoj Pisini** &nbsp;·&nbsp; [`manojpisini.com`](https://manojpisini.com) &nbsp;·&nbsp; [`@manojpisini`](https://github.com/manojpisini)
+
+<br/>
+
 </div>
