@@ -73,27 +73,50 @@ export const DiscoveryModule = {
             
             statusEl.innerText = 'SYNCED_WITH_LOCAL_MANIFEST // MD_PROTOCOL_ACTIVE';
 
-            // Parallel Discovery (Dev.to)
-            this.fetchDevTo(gridEl);
+            // Parallel Discovery (Dev.to) — cache-first
+            this.fetchDevTo(gridEl, statusEl);
         } catch (error) {
             gridEl.innerHTML = `<p class="error">BLOG_ENGINE_CRITICAL_FAILURE</p>`;
         }
     },
 
-    async fetchDevTo(gridEl) {
+    async fetchDevTo(gridEl, statusEl) {
         try {
-            // Include cache-buster to forcefully pull fresh Dev.to content bypassing CDNs
-            const response = await fetch(`https://dev.to/api/articles?username=manojpisini&per_page=4&v=${Date.now()}`);
+            // --- Strategy 1: Read from the repo-committed cache (written by GitHub Action) ---
+            const cacheResponse = await fetch(`blog/devto-cache.json?v=${Date.now()}`);
+
+            if (cacheResponse.ok) {
+                const articles = await cacheResponse.json();
+                if (Array.isArray(articles) && articles.length > 0) {
+                    this._renderDevToArticles(gridEl, articles, 'REPO_CACHE');
+                    if (statusEl) statusEl.innerText = 'SYNCED // DEVTO_REPO_CACHE_ACTIVE';
+                    return;
+                }
+            }
+        } catch (e) {
+            console.warn('DEVTO_REPO_CACHE_MISS — falling back to live API');
+        }
+
+        try {
+            // --- Strategy 2: Live Dev.to API fallback ---
+            const response = await fetch(`https://dev.to/api/articles?username=manojpisini&per_page=10`);
             if (response.ok) {
                 const articles = await response.json();
-                gridEl.innerHTML += articles.map(post => `
-                    <div class="project-card" onclick="window.location.href='${post.url}'" style="cursor: pointer;">
-                        <div class="project-meta">${post.published_at.split('T')[0]} // SYNCED</div>
-                        <h3>${post.title.toUpperCase()}</h3>
-                        <p style="font-size: 0.9rem;">${post.description || ''}</p>
-                    </div>
-                `).join('');
+                this._renderDevToArticles(gridEl, articles, 'LIVE_SYNC');
+                if (statusEl) statusEl.innerText = 'SYNCED // DEVTO_LIVE_API';
             }
-        } catch (e) { console.warn('DEVTO_SYNC_FAILED'); }
+        } catch (e) {
+            console.warn('DEVTO_SYNC_FAILED — no articles appended');
+        }
+    },
+
+    _renderDevToArticles(gridEl, articles, status) {
+        gridEl.innerHTML += articles.map(post => `
+            <div class="project-card" onclick="window.location.href='${post.url}'" style="cursor: pointer;">
+                <div class="project-meta">${post.published_at.split('T')[0]} // ${status}</div>
+                <h3>${post.title.toUpperCase()}</h3>
+                <p style="font-size: 0.9rem;">${post.description || ''}</p>
+            </div>
+        `).join('');
     }
 };

@@ -2,7 +2,7 @@ name: Fetch Dev.to Blogs
 
 on:
   schedule:
-    - cron: '0 * * * *' # Run every hour
+    - cron: "0 * * * *" # Run every hour
   workflow_dispatch: # Allow manual trigger
 
 env:
@@ -20,11 +20,14 @@ jobs:
 
       - name: Fetch Dev.to Articles
         run: |
-          curl -s https://dev.to/api/articles?username=manojpisini > blog/devto-cache.json
+          curl -sf \
+            -H "Accept: application/vnd.forem.api-v1+json" \
+            "https://dev.to/api/articles?username=manojpisini&per_page=10" \
+            -o blog/devto-cache.json || echo "[]" > blog/devto-cache.json
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: Sync dev.to blogs backup"
-          file_pattern: 'blog/devto-cache.json'
+          file_pattern: "blog/devto-cache.json"
           branch: main
