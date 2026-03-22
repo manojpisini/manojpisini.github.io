@@ -2,7 +2,7 @@ name: Fetch Dev.to Blogs
 
 on:
   schedule:
-    - cron: "0 * * * *" # Run every hour
+    - cron: '0 * * * *' # Run every hour
   workflow_dispatch: # Allow manual trigger
 
 env:
@@ -14,9 +14,15 @@ permissions:
 jobs:
   fetch_devto:
     runs-on: ubuntu-latest
+    concurrency:
+      group: devto-sync
+      cancel-in-progress: false
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Fetch Dev.to Articles
         run: |
@@ -26,8 +32,17 @@ jobs:
             -o blog/devto-cache.json || echo "[]" > blog/devto-cache.json
 
       - name: Commit and push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: Sync dev.to blogs backup"
-          file_pattern: "blog/devto-cache.json"
-          branch: main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add blog/devto-cache.json
+
+          # Exit cleanly if nothing changed
+          git diff --cached --quiet && echo "No changes to commit." && exit 0
+
+          git commit -m "chore: Sync dev.to blogs backup"
+
+          # Rebase on top of any remote changes, then push
+          git pull --rebase origin main
+          git push origin main
