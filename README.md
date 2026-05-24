@@ -4,7 +4,7 @@
 
 <br/>
 
-[![Status](https://img.shields.io/badge/STATUS-OPERATIONAL-success?style=flat-square&logo=ghostery&logoColor=white)](https://manojpisini.com)
+[![Status](https://img.shields.io/badge/STATUS-OPERATIONAL-success?style=flat-square&logo=ghostery&logoColor=white)](https://manojpisini.github.io/)
 [![Engine](https://img.shields.io/badge/ENGINE-ASTRO-FF5D01?style=flat-square&logo=astro&logoColor=white)](https://astro.build)
 [![Runtime](https://img.shields.io/badge/RUNTIME-BUN-000000?style=flat-square&logo=bun&logoColor=white)](https://bun.sh)
 [![UI/UX](https://img.shields.io/badge/DESIGN-AMOLED_DARK-000000?style=flat-square&logo=datadog&logoColor=white)](https://manojpisini.com)
@@ -164,7 +164,7 @@ Rollback:        Native via GitHub commit history
 └─────────────────────────────────────────────┘
 ```
 
-**© 2026 Manoj Pisini** &nbsp;·&nbsp; [`manojpisini.com`](https://manojpisini.com) &nbsp;·&nbsp; [`@manojpisini`](https://github.com/manojpisini)
+**© 2026 Manoj Pisini** &nbsp;·&nbsp; [`manojpisini.com`](https://manojpisini.github.io/) &nbsp;·&nbsp; [`@manojpisini`](https://github.com/manojpisini)
 
 <br/>
 
