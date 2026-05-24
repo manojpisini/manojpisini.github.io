@@ -1,0 +1,37 @@
+---
+import Hero from '@components/Hero.astro';
+import TechStack from '@components/TechStack.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { site } from '@data/profile';
+---
+
+<BaseLayout active="home">
+  <Hero
+    eyebrow="PORTFOLIO_REBUILT_ON_ASTRO"
+    title={'Software<br />Engineer'}
+    body="Manoj Pisini architects resilient software systems from cloud-native backends to low-level tools. The new portfolio is static-first, content-driven, and hydrated only where live data actually earns its place."
+    actions={[
+      { href: '/projects/', label: 'VIEW_PROJECTS' },
+      { href: site.resume, label: 'DOWNLOAD_RESUME.PDF', download: true }
+    ]}
+  />
+
+  <section class="panel-grid">
+    <article class="content-panel">
+      <p class="section-eyebrow">PHILOSOPHY</p>
+      <h2>Complexity is a debt. Code should be an asset.</h2>
+      <p>
+        I design systems that prize resilience, observability, ownership, and performance under real constraints.
+      </p>
+    </article>
+    <article class="content-panel">
+      <p class="section-eyebrow">CURRENT_BUILD</p>
+      <h2>Astro core, dynamic edge.</h2>
+      <p>
+        Pages are pre-rendered, posts are compiled from markdown, GitHub data hydrates in the browser, and deploys ship through GitHub Actions.
+      </p>
+    </article>
+  </section>
+
+  <TechStack />
+</BaseLayout>

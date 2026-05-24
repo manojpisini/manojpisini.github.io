@@ -1,0 +1,21 @@
+{
+  "name": "manojpisini-portfolio",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "build:site": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "latest",
+    "@astrojs/sitemap": "latest",
+    "astro": "latest",
+    "mermaid": "latest",
+    "typescript": "latest"
+  },
+  "devDependencies": {}
+}

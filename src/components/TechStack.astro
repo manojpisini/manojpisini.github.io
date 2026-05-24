@@ -1,0 +1,16 @@
+---
+import { skillGroups } from '@data/profile';
+---
+
+<section class="panel-grid panel-grid--four" aria-label="Technical toolkit">
+  {skillGroups.map((group, index) => (
+    <article class="content-panel">
+      <p class="section-eyebrow">0{index + 1}_{group.label.replaceAll(' ', '_').toUpperCase()}</p>
+      <div class="tag-cloud">
+        {group.items.map((item) => (
+          <span class="tech-tag">{item.toUpperCase()}</span>
+        ))}
+      </div>
+    </article>
+  ))}
+</section>

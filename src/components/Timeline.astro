@@ -1,0 +1,32 @@
+---
+interface Item {
+  period: string;
+  role?: string;
+  program?: string;
+  org: string;
+  body: string;
+}
+
+interface Props {
+  title: string;
+  items: Item[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<section class="content-band">
+  <div class="band-heading">
+    <p class="section-eyebrow">TRACE_LOG</p>
+    <h2>{title}</h2>
+  </div>
+  <div class="timeline">
+    {items.map((item) => (
+      <article class="timeline-item">
+        <span>{item.period}</span>
+        <h3>{item.role ?? item.program} // {item.org}</h3>
+        <p>{item.body}</p>
+      </article>
+    ))}
+  </div>
+</section>

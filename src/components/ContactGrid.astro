@@ -1,0 +1,24 @@
+---
+import { site } from '@data/profile';
+---
+
+<section class="panel-grid panel-grid--three">
+  <article class="content-panel">
+    <p class="section-eyebrow">DIRECT</p>
+    <h2>Email</h2>
+    <a href={`mailto:${site.email}`} class="bold-link">{site.email}</a>
+  </article>
+  <article class="content-panel">
+    <p class="section-eyebrow">NETWORK</p>
+    <h2>Professional</h2>
+    <div class="link-stack">
+      <a href={site.linkedin} target="_blank" rel="noreferrer" class="bold-link">LINKEDIN</a>
+      <a href={site.github} target="_blank" rel="noreferrer" class="bold-link">GITHUB</a>
+    </div>
+  </article>
+  <article class="content-panel">
+    <p class="section-eyebrow">LOCATION</p>
+    <h2>India</h2>
+    <p class="mono">IST // UTC+5:30 // REMOTE_READY</p>
+  </article>
+</section>

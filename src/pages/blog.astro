@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import BlogList from '@components/BlogList.astro';
+import Hero from '@components/Hero.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout title="Blog | Manoj Pisini" active="blog">
+  <Hero
+    compact
+    eyebrow="TECHNICAL_ARCHIVE"
+    title="Blog"
+    body="Engineering notes, markdown-native technical articles, and mirrored Dev.to posts."
+  />
+
+  <BlogList posts={posts} />
+</BaseLayout>

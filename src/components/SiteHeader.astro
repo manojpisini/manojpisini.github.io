@@ -1,0 +1,30 @@
+---
+import { navItems, site } from '@data/profile';
+
+interface Props {
+  active: string;
+}
+
+const { active } = Astro.props;
+---
+
+<header class="system-header">
+  <a class="brand-lockup" href="/" aria-label={`${site.name} home`}>
+    <span>{site.handle}</span>
+    <small>ASTRO_STATIC_CORE</small>
+  </a>
+
+  <nav class="nav-panel" aria-label="Primary navigation">
+    {navItems.map((item) => (
+      <a href={item.href} aria-current={active === item.key ? 'page' : undefined}>
+        {item.label}
+      </a>
+    ))}
+  </nav>
+
+  <div class="header-actions">
+    <button class="theme-toggle-btn" id="theme-toggle" type="button" aria-label="Toggle color theme">
+      THEME
+    </button>
+  </div>
+</header>

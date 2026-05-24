@@ -1,0 +1,34 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  posts: CollectionEntry<'blog'>[];
+}
+
+const { posts } = Astro.props;
+---
+
+<section class="content-band" data-blog-discovery>
+  <div class="band-heading">
+    <p class="section-eyebrow">CONTENT_COLLECTIONS</p>
+    <h2>Local Engineering Logs</h2>
+    <p>Markdown is compiled at build time, while Dev.to mirrors hydrate from the generated cache.</p>
+  </div>
+
+  <div class="standard-grid" id="blog-grid">
+    {posts.map((post) => (
+      <article class="project-card">
+        <div class="project-meta">
+          {post.data.date.toISOString().slice(0, 10)} // LOCAL_MD
+        </div>
+        <h3>{post.data.title}</h3>
+        <p>{post.data.description}</p>
+        <a class="bold-link" href={`/blog/${post.id.replace(/\.md$/, '')}/`}>READ_POST</a>
+      </article>
+    ))}
+  </div>
+</section>
+
+<script>
+  import '../scripts/blog-discovery.ts';
+</script>

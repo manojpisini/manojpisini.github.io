@@ -1,0 +1,8 @@
+.agent/
+docs/
+plans/
+tests/
+bench/
+node_modules/
+dist/
+.astro/

@@ -1,0 +1,31 @@
+name: Sync Dev.to Cache
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch Dev.to articles
+        run: |
+          mkdir -p public/blog
+          curl -sf \
+            -H "Accept: application/vnd.forem.api-v1+json" \
+            "https://dev.to/api/articles?username=manojpisini&per_page=10" \
+            -o public/blog/devto-cache.json || echo "[]" > public/blog/devto-cache.json
+
+      - name: Commit cache changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: sync dev.to cache"
+          file_pattern: "public/blog/devto-cache.json"
+          branch: main

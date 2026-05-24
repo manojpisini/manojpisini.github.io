@@ -1,0 +1,41 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  body: string;
+  actions?: Array<{ href: string; label: string; download?: boolean }>;
+  compact?: boolean;
+}
+
+const { eyebrow = 'SYSTEM_READY', title, body, actions = [], compact = false } = Astro.props;
+---
+
+<section class:list={['hero-section', compact && 'hero-section--compact']}>
+  <div class="hero-copy">
+    <p class="section-eyebrow">{eyebrow}</p>
+    <h1 set:html={title}></h1>
+    <p>{body}</p>
+    {actions.length > 0 && (
+      <div class="hero-actions">
+        {actions.map((action) => (
+          <a href={action.href} class="bold-link" download={action.download ? true : undefined}>
+            {action.label}
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+  <div class="hero-instrument" aria-hidden="true">
+    <div class="orbital-panel">
+      <span>BUILD</span>
+      <strong>ASTRO</strong>
+      <small>CONTENT_COLLECTIONS / EDGE_READY / ZERO_SERVER</small>
+    </div>
+    <div class="signal-stack">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</section>

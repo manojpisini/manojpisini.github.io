@@ -1,0 +1,42 @@
+---
+import { fallbackRepos } from '@data/profile';
+---
+
+<section class="content-band repo-command" data-repo-command>
+  <div class="band-heading">
+    <p class="section-eyebrow">GITHUB_DISCOVERY</p>
+    <h2>Repository Command Deck</h2>
+    <p>Live GitHub metadata hydrates in the browser, with committed fallbacks when the API is unavailable.</p>
+  </div>
+
+  <div class="toolbar" role="search">
+    <input id="repo-search" type="search" placeholder="FILTER_REPOSITORIES" aria-label="Filter repositories" />
+    <button class="icon-button" type="button" data-refresh-repos aria-label="Refresh repositories">SYNC</button>
+  </div>
+
+  <div class="repo-grid" id="repo-grid">
+    {fallbackRepos.map((repo) => (
+      <article class="project-card" data-repo-card>
+        <div class="project-meta">{repo.language} // VERIFIED_CACHE</div>
+        <h3>{repo.name.toUpperCase()}</h3>
+        <p>{repo.description}</p>
+        <a class="bold-link" href={repo.html_url} target="_blank" rel="noreferrer">OPEN_GITHUB</a>
+      </article>
+    ))}
+  </div>
+
+  <dialog class="repo-dialog" id="repo-dialog">
+    <div class="repo-dialog__chrome">
+      <strong id="repo-dialog-title">REPOSITORY</strong>
+      <button type="button" class="theme-toggle-btn" data-close-dialog>CLOSE</button>
+    </div>
+    <div class="repo-dialog__body">
+      <aside id="repo-files" class="repo-files"></aside>
+      <pre id="repo-preview" class="repo-preview">SELECT_FILE_TO_VIEW</pre>
+    </div>
+  </dialog>
+</section>
+
+<script>
+  import '../scripts/repositories.ts';
+</script>

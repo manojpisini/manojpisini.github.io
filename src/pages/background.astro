@@ -1,0 +1,20 @@
+---
+import Hero from '@components/Hero.astro';
+import TechStack from '@components/TechStack.astro';
+import Timeline from '@components/Timeline.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { education, experience } from '@data/profile';
+---
+
+<BaseLayout title="Background | Manoj Pisini" active="background">
+  <Hero
+    compact
+    eyebrow="BACKGROUND_TRACE"
+    title="Background"
+    body="A chronological trace across engineering, systems operations, cloud software, and computational problem solving."
+  />
+
+  <TechStack />
+  <Timeline title="Professional History" items={experience} />
+  <Timeline title="Education" items={education} />
+</BaseLayout>

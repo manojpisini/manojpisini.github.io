@@ -1,0 +1,62 @@
+---
+import SiteFooter from '@components/SiteFooter.astro';
+import SiteHeader from '@components/SiteHeader.astro';
+import { site } from '@data/profile';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  active?: string;
+  wide?: boolean;
+}
+
+const {
+  title = `${site.name} | ${site.title}`,
+  description = site.description,
+  active = 'home',
+  wide = false
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://manojpisini.com');
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta name="theme-color" content="#050505" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;700;800;900&family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline>
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+  </head>
+  <body>
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class:list={['site-shell', wide && 'site-shell--wide']}>
+      <SiteHeader active={active} />
+      <main class="system-main">
+        <slot />
+      </main>
+      <SiteFooter />
+    </div>
+    <script>
+      import '../scripts/site.ts';
+    </script>
+  </body>
+</html>

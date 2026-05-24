@@ -1,0 +1,16 @@
+---
+import Hero from '@components/Hero.astro';
+import RepoCommand from '@components/RepoCommand.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Projects | Manoj Pisini" active="projects" wide>
+  <Hero
+    compact
+    eyebrow="PROJECT_DISCOVERY"
+    title="Projects"
+    body="Public repositories, technical prototypes, and experiments pulled from GitHub with local fallbacks for resilient browsing."
+  />
+
+  <RepoCommand />
+</BaseLayout>

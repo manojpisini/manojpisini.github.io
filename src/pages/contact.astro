@@ -1,0 +1,16 @@
+---
+import ContactGrid from '@components/ContactGrid.astro';
+import Hero from '@components/Hero.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact | Manoj Pisini" active="contact">
+  <Hero
+    compact
+    eyebrow="NETWORK_ENDPOINTS"
+    title="Contact"
+    body="Direct nodes for professional networking, collaboration, and engineering conversation."
+  />
+
+  <ContactGrid />
+</BaseLayout>
